@@ -1,0 +1,38 @@
+{
+  "name": "image-resize",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon index.ts",
+    "test": "jasmine"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "expect": "^29.7.0",
+    "express": "^4.21.1",
+    "prettier": "^3.3.3",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "@types/express": "^5.0.0",
+    "@types/jasmine": "^3.6.3",
+    "@types/node": "^22.7.5",
+    "concurrently": "^9.0.1",
+    "eslint": "^9.12.0",
+    "globals": "^15.11.0",
+    "jasmine": "^4.6.0",
+    "jasmine-spec-reporter": "^6.0.0",
+    "jasmine-ts": "^0.3.0",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^4.2.9",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.9.0"
+  }
+}
