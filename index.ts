@@ -1,6 +1,5 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-import sharp from "sharp";
 import { resizeImage } from "./image.service";
 
 dotenv.config();
