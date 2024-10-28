@@ -59,3 +59,23 @@ Although not a requirement, we recommend using Git from the very beginning if yo
 ## License
 
 [License](LICENSE.txt)
+
+## Install Eslint
+npm install eslint --save-dev  
+npm install @typescript-eslint/parser --save-dev  
+npm i @typescript-eslint/eslint-plugin --save-dev
+
+## Install prettier
+npm install prettier --save-dev  
+npm install eslint-config-prettier --save-dev  
+npm install eslint-plugin-prettier --save-dev
+## Onchange : watch file changing and run prettier command
+npm install --save-dev onchange
+
+## API 
+
+### Access app: 
+- http://localhost:3000
+
+### Image API
+- http://localhost:3000/api/images?fileName=<image-filename(without-fileformat)>&width=<image-expected-width>&height=<image-expected-height>

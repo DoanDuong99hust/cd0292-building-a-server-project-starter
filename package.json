@@ -6,7 +6,10 @@
     "build": "npx tsc",
     "start": "node dist/index.js",
     "dev": "nodemon index.ts",
-    "test": "jasmine-ts"
+    "test": "jasmine-ts",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "prettier-format": "onchange '*.ts' prettier --config .prettierrc 'src/**/*.ts' --write"
   },
   "author": "",
   "license": "ISC",
@@ -21,9 +24,16 @@
     "@types/express": "^5.0.0",
     "@types/jasmine": "^5.1.4",
     "@types/node": "^22.7.5",
+    "@typescript-eslint/eslint-plugin": "^8.11.0",
+    "@typescript-eslint/parser": "^8.11.0",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "jasmine": "^3.99.0",
     "jasmine-core": "~5.2.0",
     "jasmine-spec-reporter": "^6.0.0",
-    "jasmine-ts": "^0.4.0"
+    "jasmine-ts": "^0.4.0",
+    "onchange": "^7.1.0",
+    "prettier": "^3.3.3"
   }
 }
