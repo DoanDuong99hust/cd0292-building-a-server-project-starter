@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
-import { resizeImage, validateInput } from './image.service';
+import { getCachedImage, resizeImage, validateInput } from './image.service';
 import { errorHandler } from './errorHandler';
 
 dotenv.config();
@@ -18,7 +18,7 @@ app.get('/api/images/', validateInput, async (req: Request, res: Response) => {
   if (fileName !== undefined) {
     res.set('Content-Type', 'image/png');
     res.send(
-      await resizeImage(fileName.toString(), Number(width), Number(height))
+      await getCachedImage(req)
     );
   }
 });

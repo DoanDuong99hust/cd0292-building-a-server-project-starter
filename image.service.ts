@@ -3,6 +3,21 @@ import { existsSync } from 'fs';
 import sharp from 'sharp';
 import { ValidationError } from './error';
 
+let imgCache = new Map()
+
+const getCachedImage = async (req: Request) => {
+	const { fileName, width, height } = req.query;
+	let cacheKey = req.originalUrl;
+	let existingContent = imgCache.get(cacheKey);
+	
+	if (existingContent !== undefined) {
+		return existingContent;
+	}
+	let outputImageBuffer = await resizeImage(fileName as string, Number(width), Number(height));
+	imgCache.set(cacheKey, outputImageBuffer);
+	return outputImageBuffer;
+}
+
 const isImageExisted = async (fileName: string) => {
   return existsSync(createImagePath(fileName));
 };
@@ -52,4 +67,4 @@ const validateInput = async (
   next();
 };
 
-export { resizeImage, createImagePath, isImageExisted, validateInput };
+export { resizeImage, createImagePath, isImageExisted, validateInput, getCachedImage };
